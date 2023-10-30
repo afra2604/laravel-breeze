@@ -33,7 +33,7 @@
                     <td>{{ $buku->judul }}</td>
                     <td>{{ $buku->penulis }}</td>
                     <td>{{ "Rp ".number_format($buku->harga, 2, ',', '.') }}</td>
-                    <td>{{ $buku->tgl_terbit->format('d/m/Y')}}</td>
+                    <td>{{ Carbon\Carbon::parse($buku->tgl_terbit)->format('d/m/Y')}}</td>
                     <td>
                         <a href="{{ route('buku.edit', ['id' => $buku->id]) }}" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
                         <form action="{{ route('buku.destroy', ['id' => $buku->id]) }}" method="POST" style="display: inline;">
