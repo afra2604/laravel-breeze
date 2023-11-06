@@ -15,6 +15,11 @@
             <i class="fa fa-plus"></i> Tambah Buku</a>
     </p>
 
+    <form action="{{ route('buku.search') }}" method="get">
+                        @csrf
+                        <input type="text" name="kata" class="form form-control" placeholder="Cari ..." style="float:left;">
+                    </form>
+
     <table class="table table-striped">
         <thead>
             <tr>
