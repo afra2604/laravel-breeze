@@ -34,6 +34,18 @@
         <tbody>
             @foreach($data_buku as $buku)
                 <tr>
+                    
+                @if ( $buku->filepath )
+                                <div class="relative h-10 w-10">
+                                    <img
+                                    class="h-full w-full rounded-full object-cover object-center"
+                                    src="{{ asset($buku->filepath) }}"
+                                    alt=""
+                                    style="padding-right: 20px;"
+                                    />
+                                </div>
+                                @endif
+
                     <td>{{ $buku->id }}</td>
                     <td>{{ $buku->judul }}</td>
                     <td>{{ $buku->penulis }}</td>

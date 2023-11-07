@@ -41,6 +41,10 @@
                             <input type="date" class="form-control" id="tgl_terbit" name="tgl_terbit">
                         </div>
                         <div class="form-group">
+                            <label for="thumbnail">Pilih Gambar</label>
+                            <input type="file" class="form-control" id="thumbnail" name="thumbnail">
+                        </div>
+                        <div class="form-group">
                             <button type="submit" class="btn btn-primary">Simpan</button>
                             <a href="/buku" class="btn btn-secondary">Batal</a>
                         </div>
