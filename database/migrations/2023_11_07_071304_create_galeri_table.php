@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('galeri', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_galeri');
-            $table->string('galeri_seo');
-            $table->string('path');
-            $table->text('keterangan');
-            $table->string('foto');
+            $table->string('nama_galeri')->nullable();
+            $table->string('galeri_seo')->nullable();
+            $table->string('path')->nullable();
+            $table->text('keterangan')->nullable();
+            $table->string('foto')->nullable();
             $table->unsignedBigInteger('buku_id');
             $table->foreign('buku_id')
             ->references('id')

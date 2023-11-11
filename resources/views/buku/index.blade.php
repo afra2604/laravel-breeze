@@ -24,6 +24,8 @@
         <thead>
             <tr>
                 <th>ID</th>
+                <th>Foto</th>
+                <th>Galeri</th>
                 <th>Judul</th>
                 <th>Penulis</th>
                 <th>Harga</th>
@@ -32,21 +34,33 @@
             </tr>
         </thead>
         <tbody>
+
             @foreach($data_buku as $buku)
+
                 <tr>
-                    
-                @if ( $buku->filepath )
-                                <div class="relative h-10 w-10">
+                <td>{{ $buku->id }}</td>
+              
+                                <td class="relative">
                                     <img
                                     class="h-full w-full rounded-full object-cover object-center"
                                     src="{{ asset($buku->filepath) }}"
                                     alt=""
                                     style="padding-right: 20px;"
                                     />
-                                </div>
-                                @endif
+                                </td>
+                    <td class="gallery_items">
+                        @foreach($buku->galleries()->get() as $gallery)
+                            <div class="gallery_item">
+                                <img
+                                class="rounded-full object-cover object-center"
+                                src="{{ asset($gallery->path) }}"
+                                alt=""
+                                width="400"
+                                />
+                            </div>
+                        @endforeach
+                    </td>
 
-                    <td>{{ $buku->id }}</td>
                     <td>{{ $buku->judul }}</td>
                     <td>{{ $buku->penulis }}</td>
                     <td>{{ "Rp ".number_format($buku->harga, 2, ',', '.') }}</td>

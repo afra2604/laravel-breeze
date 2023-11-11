@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Buku;
+use App\Models\Gallery;
 use Image;
 
 class BukuController extends Controller

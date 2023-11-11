@@ -20,9 +20,7 @@
         <h4>Tambah Buku</h4>
             <div class="card card-shadow">
                 <div class="card-body">
-             
-                
-                    <form method="post" action="{{ route('buku.store') }}">
+                    <form method="post" action="{{ route('buku.store') }}" enctype=”multipart/form-data”>
                         @csrf
                         <div class="form-group">
                             <label for="judul">Judul</label>
@@ -39,10 +37,6 @@
                         <div class="form-group">
                             <label for="tgl_terbit">Tgl. Terbit</label>
                             <input type="date" class="form-control" id="tgl_terbit" name="tgl_terbit">
-                        </div>
-                        <div class="form-group">
-                            <label for="thumbnail">Pilih Gambar</label>
-                            <input type="file" class="form-control" id="thumbnail" name="thumbnail">
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Simpan</button>

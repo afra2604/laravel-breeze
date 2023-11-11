@@ -11,8 +11,7 @@ class Buku extends Model
     use HasFactory;
 
     protected $table = 'buku';
-    protected $primaryKey = 'id';
-    protected $fillable = ['judul', 'penulis', 'harga', 'tgl_terbit'];
+    protected $fillable = ['judul', 'penulis', 'harga', 'tgl_terbit', 'filename', 'filepath'];
     protected $dates = ['tgl_terbit'];
 
     public function galleries(): HasMany{
